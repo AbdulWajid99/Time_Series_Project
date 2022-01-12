@@ -14,9 +14,7 @@ import numpy as np
 app = Flask(__name__)  # indicate where to start the app # return script name
 
 # read data path
-df = pd.read_csv(
-    "E:\Data_Scientist\Python\Projects\Machine_Learning_Projects\Time_Series_Project-Hassan\Web_app\General1\Future_results1.csv"
-)
+df = pd.read_csv("\Future_results1.csv")
 
 
 @app.route("/")  # indicating root
@@ -29,7 +27,7 @@ def home():
     # save returened value
     data1 = request.form["month"]
     result_not_available = "Prediction not predicted yet"
-    
+
     # select value
     if data1 == "2022-01":
         try:
@@ -63,22 +61,22 @@ def home():
             result = result_not_available
     elif data1 == "2022-07":
         try:
-           result = int(df.iloc[42, 3])
+            result = int(df.iloc[42, 3])
         except:
             result = result_not_available
-        
+
     elif data1 == "2022-08":
         try:
             result = int(df.iloc[43, 3])
         except:
             result = result_not_available
-        
+
     elif data1 == "2022-09":
         try:
             result = int(df.iloc[44, 3])
         except:
             result = result_not_available
-        
+
     elif data1 == "2022-10":
         try:
             result = int(df.iloc[45, 3])
@@ -87,7 +85,7 @@ def home():
 
     elif data1 == "2022-11":
         try:
-            result =  int(df.iloc[46, 3])
+            result = int(df.iloc[46, 3])
         except:
             result = result_not_available
     elif data1 == "2022-12":
